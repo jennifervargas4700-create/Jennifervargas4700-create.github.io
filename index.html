@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%23007bff' stroke='%23007bff' stroke-width='10' d='M0 336c0-79.5 64.5-144 144-144l17.8 0C184.6 113.8 255.8 48 344 48c101.6 0 184 82.4 184 184l0 8c49.7 0 92.1 33.6 106.1 80c3.7 12.1-3.1 25-15.2 28.7s-25-3.1-28.7-15.2C581.4 304 543.1 280 500 280l-28 0c-15.5 0-28-12.5-28-28l0-12c0-79.5-64.5-144-144-144c-68 0-125.4 47.2-140.5 113.6c-3.5 15.1-18.3 24.7-33.4 21.2C111.4 227.1 96 240.2 96 256c0 14.2 9.3 26.1 22.8 29.8c14.9 4.1 23.8 19.5 19.7 34.4s-19.5 23.8-34.4 19.7C61.4 328.6 32 295.7 32 256c0-38.3 24.8-70.9 59.2-82.6C103.5 95.8 169.8 48 248 48c82 0 150.3 52.3 174 125.1C447.8 164.2 474 160 500 160c101.6 0 184 82.4 184 184c0 101.6-82.4 184-184 184L144 528C64.5 528 0 463.5 0 384z'/></svg>"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap");
+    </style>
+    <title>Jennifer V</title>
+  </head>
+  <body>
+    <nav>
+      <div class="name">Jennifer V</div>
+      <div class="nav-links">
+        <a href="/index.html" style="color: #333; text-decoration: none"
+          >About Me</a
+        >
+        |
+        <a
+          href="/hobbies/hobbies.html"
+          style="color: #333; text-decoration: none"
+          >Hobbies</a
+        >
+        |
+        <a href="/career/career.html" style="color: #333; text-decoration: none"
+          >Career</a
+        >
+        |
+        <a
+          href="/contact/contact.html"
+          style="color: #333; text-decoration: none"
+          >Contact</a
+        >
+        |
+        <a
+          href="/hangman/hangman.html"
+          style="color: #333; text-decoration: none"
+          >Activity</a
+        >
+      </div>
+    </nav>
+    <div class="split-container">
+      <!-- Left Side Text Panel -->
+      <div class="text-panel">
+        <h1>An Overview of Jennifer V</h1>
+        <p>
+          Born in 2003 to immigrant parents, I had always grown up doing some
+          sort of paperwork and phone calls for them. This has shaped me into an
+          independent and resourceful person to always figure things out on my
+          own. I have a sweet chihuahua named Bella who is a tripod. In the past
+          I have owned 2 bunnies and 2 frogs who have sadly passed.
+          Additionally, I love traveling to Mexico to visit my relatives in CDMX
+          and vacation in Perto Penasco. <br /><br />
+          I am currently a student at Phoenix College, pursuing a degree in
+          Information Technology, and am holding a 4-year position as IT Support
+          at a Distribution Center. I hope this website gives you a glipse of
+          what I am capable of as I have yet to demonstrate my backend skills.
+        </p>
+      </div>
+
+      <!-- Right Side Carousel Panel -->
+      <div class="carousel-panel">
+        <!-- Navigation Arrows -->
+        <button class="nav-btn prev-btn" aria-label="Previous Slide">
+          &#10094;
+        </button>
+        <button class="nav-btn next-btn" aria-label="Next Slide">
+          &#10095;
+        </button>
+
+        <!-- Image Track -->
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img src="/images/bunnies.jpg" alt="Bunnies" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/images/dogWalk.JPG" alt="walkBella" />
+          </div>
+          <div class="carousel-slide">
+            <img src="/images/iPadDog.JPG" alt="iPadBella" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-section">
+      <div class="reveal-container">
+        <div class="reveal-overlay"></div>
+        <img src="/images/binary.jpg" alt="Jennifer V" />
+      </div>
+
+      <div class="reveal-text">
+        <p>
+          I don't typically show my face online, so this is a hidden image of
+          myself :P
+        </p>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2026 Jennifer Vargas' Personal Website</p>
+      <p>
+        Informally Connect With Me On:
+        <a
+          href="https://www.whattsapp.com"
+          style="color: #333; text-decoration: none"
+          target="_blank"
+          >WhatsApp</a
+        >
+        |
+        <a
+          href="https://www.instagram.com/jen.n.ifer"
+          style="color: #333; text-decoration: none"
+          target="_blank"
+          >Instagram</a
+        >
+        |
+      </p>
+    </footer>
+
+    <style>
+      body {
+        background-color: #f9f9f9;
+      }
+      nav {
+        align-items: center;
+        background-color: #f1dfe6;
+        padding: 20px;
+        position: top;
+        width: 100%;
+        display: flex;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .name {
+        font-family: "Mrs Saint Delafield", cursive;
+        text-align: left;
+        font-size: 30px;
+        color: #333;
+      }
+      .nav-links {
+        text-align: right;
+        font-size: 18px;
+        color: #333;
+        margin-left: auto;
+      }
+      /* Global Reset */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Split Screen Container */
+      .split-container {
+        display: flex;
+        width: 100%;
+        height: 95vh; /* Full screen height */
+      }
+
+      /* Left Side: Text Panel */
+      .text-panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+        background-color: #faeff3;
+      }
+
+      .text-panel h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #111;
+      }
+
+      .text-panel p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+
+      /* Right Side: Carousel Panel */
+      .carousel-panel {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      .carousel-track {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        height: 100%;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Keeps image proportions clean */
+      }
+
+      /* Carousel Navigation Buttons */
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: background 0.3s;
+      }
+
+      .nav-btn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .prev-btn {
+        left: 20px;
+      }
+      .next-btn {
+        right: 20px;
+      }
+      .reveal-container {
+        flex: 2;
+        position: relative;
+        width: 400px;
+        height: 300px;
+        overflow: hidden; /* Hides parts of the image that spill over */
+      }
+
+      .reveal-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .reveal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #caa8c0; /* Overlay color (change as needed) */
+        z-index: 10;
+        transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+      }
+
+      /* Slide the overlay up to reveal the image on hover */
+      .reveal-container:hover .reveal-overlay {
+        transform: translateY(-100%);
+      }
+
+      .reveal-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 50px;
+        background-color: #faeff3;
+      }
+
+      .reveal-text {
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .reveal-text p {
+        color: #333;
+        line-height: 1.4;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      footer {
+        background-color: #f1dfe6;
+        padding: 20px;
+        position: bottom;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      footer a {
+        color: #333;
+        text-decoration: none;
+      }
+    </style>
+    <script>
+      const track = document.querySelector(".carousel-track");
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector(".next-btn");
+      const prevButton = document.querySelector(".prev-btn");
+
+      let currentIndex = 0;
+
+      // Function to transition to the targeted slide index
+      function moveToSlide(index) {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+      }
+
+      // Event listener for the Next button
+      nextButton.addEventListener("click", () => {
+        if (currentIndex < slides.length - 1) {
+          moveToSlide(currentIndex + 1);
+        } else {
+          moveToSlide(0); // Loop back to the first slide
+        }
+      });
+
+      // Event listener for the Previous button
+      prevButton.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          moveToSlide(currentIndex - 1);
+        } else {
+          moveToSlide(slides.length - 1); // Loop to the last slide
+        }
+      });
+    </script>
+  </body>
+</html>

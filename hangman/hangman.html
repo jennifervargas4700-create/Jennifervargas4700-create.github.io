@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'><path fill='%23007bff' stroke='%23007bff' stroke-width='10' d='M0 336c0-79.5 64.5-144 144-144l17.8 0C184.6 113.8 255.8 48 344 48c101.6 0 184 82.4 184 184l0 8c49.7 0 92.1 33.6 106.1 80c3.7 12.1-3.1 25-15.2 28.7s-25-3.1-28.7-15.2C581.4 304 543.1 280 500 280l-28 0c-15.5 0-28-12.5-28-28l0-12c0-79.5-64.5-144-144-144c-68 0-125.4 47.2-140.5 113.6c-3.5 15.1-18.3 24.7-33.4 21.2C111.4 227.1 96 240.2 96 256c0 14.2 9.3 26.1 22.8 29.8c14.9 4.1 23.8 19.5 19.7 34.4s-19.5 23.8-34.4 19.7C61.4 328.6 32 295.7 32 256c0-38.3 24.8-70.9 59.2-82.6C103.5 95.8 169.8 48 248 48c82 0 150.3 52.3 174 125.1C447.8 164.2 474 160 500 160c101.6 0 184 82.4 184 184c0 101.6-82.4 184-184 184L144 528C64.5 528 0 463.5 0 384z'/></svg>"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap");
+    </style>
+    <title>Fun Activity</title>
+  </head>
+  <body>
+    <nav>
+      <div class="name">Jennifer V</div>
+      <div class="nav-links">
+        <a href="/index.html" style="color: #333; text-decoration: none"
+          >About Me</a
+        >
+        |
+        <a
+          href="/hobbies/hobbies.html"
+          style="color: #333; text-decoration: none"
+          >Hobbies</a
+        >
+        |
+        <a href="/career/career.html" style="color: #333; text-decoration: none"
+          >Career</a
+        >
+        |
+        <a
+          href="/contact/contact.html"
+          style="color: #333; text-decoration: none"
+          >Contact</a
+        >
+        |
+        <a
+          href="/hangman/hangman.html"
+          style="color: #333; text-decoration: none"
+          >Activity</a
+        >
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Who was I named after?</h1>
+      <div class="gallows" id="gallows"></div>
+      <div class="word-display" id="wordDisplay"></div>
+      <div class="message" id="message"></div>
+
+      <div class="keyboard" id="keyboard"></div>
+    </div>
+
+    <style>
+      body {
+        background-color: #f9f9f9;
+      }
+      nav {
+        align-items: center;
+        background-color: #f1dfe6;
+        padding: 20px;
+        position: top;
+        width: 100%;
+        display: flex;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .name {
+        font-family: "Mrs Saint Delafield", cursive;
+        text-align: left;
+        font-size: 30px;
+        color: #333;
+      }
+      .nav-links {
+        text-align: right;
+        font-size: 18px;
+        color: #333;
+        margin-left: auto;
+      }
+      footer {
+        background-color: #f1dfe6;
+        padding: 10px;
+        position: bottom;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      footer a {
+        color: #333;
+        text-decoration: none;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
+        margin: 120px auto 60px;
+      }
+      h1 {
+        color: #333;
+        margin-top: 0;
+      }
+      .gallows {
+        font-family: monospace;
+        font-size: 1.2rem;
+        white-space: pre;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 20px auto;
+        width: 120px;
+        text-align: left;
+        position: center;
+      }
+      .word-display {
+        font-size: 2rem;
+        letter-spacing: 10px;
+        margin: 20px 0;
+        font-weight: bold;
+        min-height: 45px;
+      }
+      .word-display span {
+        display: inline-block;
+        margin: 0 5px;
+      }
+      .word-display .space {
+        margin: 0 15px;
+        letter-spacing: normal;
+      }
+      .message {
+        font-size: 1.2rem;
+        font-weight: bold;
+        height: 30px;
+        margin-bottom: 20px;
+      }
+      .keyboard {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        border: none;
+        background: #a5bedb;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      button:hover:not(:disabled) {
+        background: #0056b3;
+      }
+      button:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+      .reset-btn {
+        background: #96d8a6;
+        grid-column: span 7;
+        padding: 12px;
+      }
+      .reset-btn:hover {
+        background: #218838;
+      }
+    </style>
+    <script>
+      const targetWord = "JENNIFER LOPEZ";
+      let guessedLetters = new Set();
+      let mistakes = 0;
+      const maxMistakes = 6;
+
+      const gallowsStages = [
+        `  +---+
+
+  |   |
+      |
+      |
+      |
+      |
+=========`,
+        `  +---+
+
+  |   |
+  O   |
+      |
+      |
+      |
+=========`,
+        `  +---+
+
+  |   |
+  O   |
+
+  |   |
+      |
+      |
+=========`,
+        `  +---+
+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========`,
+        `  +---+
+
+  |   |
+  O   |
+ /|\\  |
+      |
+      |
+=========`,
+        `  +---+
+
+  |   |
+  O   |
+ /|\\  |
+ /    |
+      |
+=========`,
+        `  +---+
+
+  |   |
+  O   |
+ /|\\  |
+ / \\  |
+      |
+=========`,
+      ];
+
+      function initGame() {
+        guessedLetters.clear();
+        mistakes = 0;
+        document.getElementById("message").innerText =
+          "Hint: I was named after a famous singer and actress!";
+        document.getElementById("message").style.color = "#333";
+
+        renderWord();
+        renderGallows();
+        renderKeyboard();
+      }
+
+      function renderWord() {
+        const display = document.getElementById("wordDisplay");
+        display.innerHTML = "";
+
+        for (let char of targetWord) {
+          if (char === " ") {
+            const spaceSpan = document.createElement("span");
+            spaceSpan.className = "space";
+            spaceSpan.innerHTML = "&nbsp;";
+            display.appendChild(spaceSpan);
+          } else if (guessedLetters.has(char)) {
+            const letterSpan = document.createElement("span");
+            letterSpan.innerText = char;
+            display.appendChild(letterSpan);
+          } else {
+            const letterSpan = document.createElement("span");
+            letterSpan.innerText = "_";
+            display.appendChild(letterSpan);
+          }
+        }
+      }
+
+      function renderGallows() {
+        document.getElementById("gallows").textContent =
+          gallowsStages[mistakes];
+      }
+
+      function renderKeyboard() {
+        const keyboard = document.getElementById("keyboard");
+        keyboard.innerHTML = "";
+
+        const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (let letter of alphabet) {
+          const btn = document.createElement("button");
+          btn.innerText = letter;
+          btn.onclick = () => handleGuess(letter);
+          keyboard.appendChild(btn);
+        }
+
+        const resetBtn = document.createElement("button");
+        resetBtn.innerText = "Play Again";
+        resetBtn.className = "reset-btn";
+        resetBtn.onclick = initGame;
+        keyboard.appendChild(resetBtn);
+      }
+
+      function handleGuess(letter) {
+        guessedLetters.add(letter);
+
+        // Disable the clicked button
+        const buttons = document.querySelectorAll(
+          "#keyboard button:not(.reset-btn)",
+        );
+        for (let btn of buttons) {
+          if (btn.innerText === letter) {
+            btn.disabled = true;
+            break;
+          }
+        }
+
+        if (targetWord.includes(letter)) {
+          renderWord();
+          checkWin();
+        } else {
+          mistakes++;
+          renderGallows();
+          checkLose();
+        }
+      }
+
+      function checkWin() {
+        const hasWon = [...targetWord].every(
+          (char) => char === " " || guessedLetters.has(char),
+        );
+        if (hasWon) {
+          document.getElementById("message").innerText =
+            "🎉 You Win! It's Jennifer Lopez!";
+          document.getElementById("message").style.color = "#28a745";
+          disableAllLetters();
+        }
+      }
+
+      function checkLose() {
+        if (mistakes >= maxMistakes) {
+          document.getElementById("message").innerText =
+            "💥 Game Over! The answer was Jennifer Lopez.";
+          document.getElementById("message").style.color = "#dc3545";
+          disableAllLetters();
+
+          // Show the full word
+          guessedLetters = new Set("JENNIFERLOPEZ");
+          renderWord();
+        }
+      }
+
+      function disableAllLetters() {
+        const buttons = document.querySelectorAll(
+          "#keyboard button:not(.reset-btn)",
+        );
+        buttons.forEach((btn) => (btn.disabled = true));
+      }
+
+      // Start the game on page load
+      initGame();
+    </script>
+    <footer>
+      <p>&copy; 2026 Jennifer Vargas' Personal Website</p>
+      <p>
+        Informally Connect With Me On:
+        <a
+          href="https://www.whattsapp.com"
+          style="color: #333; text-decoration: none"
+          target="_blank"
+          >WhatsApp</a
+        >
+        |
+        <a
+          href="https://www.instagram.com/jen.n.ifer"
+          style="color: #333; text-decoration: none"
+          target="_blank"
+          >Instagram</a
+        >
+        |
+      </p>
+    </footer>
+  </body>
+</html>
